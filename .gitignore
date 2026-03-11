@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv
+
+# PyInstaller
+build/
+dist/
+*.manifest
+*.spec
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Application build artifacts
+DesktopNewton_v1.0/
+DesktopNewton_v1.0.zip
+
+# Original binary artifacts (preserved for reference)
+#.data
+#.rdata
+#.text
+#desknewt.exe
+#ezyZip desktop newton.zip
