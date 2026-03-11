@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desktop Newton - Web Edition</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+</head>
+<body>
+    <!-- Physics Canvas Container -->
+    <div id="canvas-container"></div>
+    
+    <!-- Settings Panel -->
+    <div id="settings-panel" class="panel">
+        <div class="panel-header">
+            <h2>Physics Settings</h2>
+            <button id="close-panel" class="close-btn">×</button>
+        </div>
+        
+        <div class="panel-content">
+            <!-- Gravity Slider -->
+            <div class="slider-group">
+                <label for="gravity">Gravity: <span id="gravity-value">0.9</span></label>
+                <input type="range" id="gravity" min="0" max="2" step="0.1" value="0.9">
+            </div>
+            
+            <!-- Air Resistance Slider -->
+            <div class="slider-group">
+                <label for="damping">Air Resistance: <span id="damping-value">0.02</span></label>
+                <input type="range" id="damping" min="0.001" max="0.1" step="0.001" value="0.02">
+            </div>
+            
+            <!-- Bounciness Slider -->
+            <div class="slider-group">
+                <label for="elasticity">Bounciness: <span id="elasticity-value">0.3</span></label>
+                <input type="range" id="elasticity" min="0" max="1" step="0.1" value="0.3">
+            </div>
+            
+            <!-- Scale Slider -->
+            <div class="slider-group">
+                <label for="scale">Scale: <span id="scale-value">1.0</span></label>
+                <input type="range" id="scale" min="0.5" max="2" step="0.1" value="1.0">
+            </div>
+            
+            <!-- Color Pickers -->
+            <div class="color-section">
+                <label>Colors:</label>
+                <div class="color-group">
+                    <span>Head:</span>
+                    <div class="color-buttons" id="head-colors">
+                        <button class="color-btn active" data-color="#FFC896" data-type="head" style="background: #FFC896;"></button>
+                        <button class="color-btn" data-color="#FF6464" data-type="head" style="background: #FF6464;"></button>
+                        <button class="color-btn" data-color="#64C864" data-type="head" style="background: #64C864;"></button>
+                        <button class="color-btn" data-color="#6496FF" data-type="head" style="background: #6496FF;"></button>
+                    </div>
+                </div>
+                <div class="color-group">
+                    <span>Torso:</span>
+                    <div class="color-buttons" id="torso-colors">
+                        <button class="color-btn active" data-color="#6496C8" data-type="torso" style="background: #6496C8;"></button>
+                        <button class="color-btn" data-color="#C86464" data-type="torso" style="background: #C86464;"></button>
+                        <button class="color-btn" data-color="#64C864" data-type="torso" style="background: #64C864;"></button>
+                        <button class="color-btn" data-color="#C8C864" data-type="torso" style="background: #C8C864;"></button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Reset Button -->
+            <button id="reset-btn" class="reset-btn">Reset Ragdoll</button>
+        </div>
+    </div>
+    
+    <!-- Mini Toggle Button (shown when panel is hidden) -->
+    <button id="mini-toggle" class="mini-toggle" style="display: none;">Settings</button>
+    
+    <!-- Help Overlay -->
+    <div id="help-overlay" class="help-overlay">
+        <h1>Desktop Newton v1.0</h1>
+        <div class="help-content">
+            <p><strong>Controls:</strong></p>
+            <ul>
+                <li><span class="key">Left Click + Drag</span> - Grab and throw ragdoll</li>
+                <li><span class="key">Space</span> - Reset ragdoll</li>
+                <li><span class="key">S</span> - Toggle settings panel</li>
+                <li><span class="key">H</span> - Toggle this help</li>
+                <li><span class="key">ESC</span> - Exit (close tab)</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
